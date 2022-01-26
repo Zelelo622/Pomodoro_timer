@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro timer</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="#">
+  </head>
+  <body>
+      <header class="header">
+          <div class="container">
+              <div class="header__inner">
+                  <div class="music">
+                  <ul class="music__list">
+                      <li class="music__item"><input id="audio" type="button" value="LO-FI" data-url="https://boxradio-edge-10.streamafrica.net/lofi"></li>
+                      <li class="music__item"><input id="audio2" type="button" value="ROCK" data-url="https://stream-mz.planetradio.co.uk/planetrock.aac"></li>
+                  </ul>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+      <main class="main">
+        <div class="pomodoro-app">
+            <div class="container"> 
+                <div class="timer-options-container">
+                  <button class="timer-option" id="work-session">Work Session</button>
+                  <button class="timer-option" id="short-break">Short Break</button>
+                  <button class="timer-option" id="long-break">Long Break</button>
+                </div>
+                <div class="timer">
+                  <div class="time">
+                    <h2 id="minutes">25</h2>
+                  </div>
+                  <div class="time">
+                    <h2 id="separator">:</h2>
+                  </div>
+                  <div class="time">
+                    <h2 id="seconds">00</h2>
+                  </div>
+                </div>
+                <div class="buttons-control">
+                  <button id="start-btn">Start</button>
+                  <button id="stop-btn">Stop</button>
+                </div>
+            </div>
+        </div>
+      </main>
+      
+      <script src="./js/main.js"></script>
+  </body>
+</html>
