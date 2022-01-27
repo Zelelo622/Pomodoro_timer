@@ -1,31 +1,6 @@
 const audio = new Audio();
-
-document.querySelector('#audio').addEventListener('click', function(e) {
-	if (e.target.value === 'LO-FI') {
-		e.target.value = 'STOP';
-		audio.src = e.target.getAttribute('data-url');
-		audio.play();
-	} else {
-		e.target.value = 'LO-FI';
-		audio.currentTime = 0;
-		audio.pause();
-	}
-});
-
-document.querySelector('#audio2').addEventListener('click', function(e) {
-	if (e.target.value === 'ROCK') {
-		e.target.value = 'STOP';
-		audio.src = e.target.getAttribute('data-url');
-		audio.play();
-	} else {
-		e.target.value = 'ROCK';
-		audio.currentTime = 0;
-		audio.pause();
-	}
-});
-
-/*--------------------------------*/ 
-
+const audioLofi = document.querySelector('#audio');
+const audioRock = document.querySelector('#audio2');
 const alarmSound = new Audio('../music/Alarm.mp3');
 // DOM buttons and clock
 const startBtn = document.querySelector('#start-btn');
@@ -113,3 +88,30 @@ function calcProgressEnd(min, sec) {
 	return parseInt(min) * 60 + parseInt(sec);
 }
 
+audioLofi.addEventListener('click', function (e) {
+	if (e.target.value === 'LO-FI') {
+		e.target.value = 'STOP';
+		audio.src = e.target.getAttribute('data-url');
+		audio.play();
+		audioRock.disabled = true;
+	} else {
+		e.target.value = 'LO-FI';
+		audio.currentTime = 0;
+		audio.pause();
+		audioRock.disabled = false;
+	}
+});
+
+audioRock.addEventListener('click', function (e) {
+	if (e.target.value === 'ROCK') {
+		e.target.value = 'STOP';
+		audio.src = e.target.getAttribute('data-url');
+		audio.play();
+		audioLofi.disabled = true;
+	} else {
+		e.target.value = 'ROCK';
+		audio.currentTime = 0;
+		audio.pause();
+		audioLofi.disabled = false;
+	}
+});
